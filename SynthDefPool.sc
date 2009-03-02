@@ -50,17 +50,17 @@ SynthDefPool {
 		Server.default.waitForBoot{
 			this.memStore;
 			
-			w = Window("<SynthDefPool>", Rect(0, 0, 600, 50).center_(Window.screenBounds.center));
+			w = GUI.window.new("<SynthDefPool>", Rect(0, 0, 600, 50).center_(GUI.window.screenBounds.center));
 			list = dict.keys(Array);
 			list.sort;
 			
 			wrect = w.view.bounds;
-			listview = PopUpMenu(w, wrect.copy.width_(wrect.width/2).insetBy(5, 15)).items_(list);
+			listview = GUI.popUpMenu.new(w, wrect.copy.width_(wrect.width/2).insetBy(5, 15)).items_(list);
 			
-			Button(w, wrect.copy.left_(wrect.width*3/6).width_(wrect.width/6).insetBy(5, 15))
+			GUI.button.new(w, wrect.copy.left_(wrect.width*3/6).width_(wrect.width/6).insetBy(5, 15))
 				.states_([["makeWindow"]])
 				.action_{ SynthDescLib.at(listview.item).makeWindow };
-			Button(w, wrect.copy.left_(wrect.width*4/6).width_(wrect.width/6).insetBy(5, 15))
+			GUI.button.new(w, wrect.copy.left_(wrect.width*4/6).width_(wrect.width/6).insetBy(5, 15))
 				.states_([["usage"]])
 				.action_{ Document.new(string:"s.boot;
 SynthDefPool.at(\\"++listview.item++").memStore; // ensure the server knows about it
@@ -68,7 +68,7 @@ x = Synth(\\"++listview.item++", [\\freq, 440]);
 x.set(\\freq, 330);
 "
 				).syntaxColorize.promptToSave_(false) };
-			Button(w, wrect.copy.left_(wrect.width*5/6).width_(wrect.width/6).insetBy(5, 15))
+			GUI.button.new(w, wrect.copy.left_(wrect.width*5/6).width_(wrect.width/6).insetBy(5, 15))
 				.states_([["source"]])
 				.action_{ Document.open(poolpath +/+ listview.item ++ ".scd") };
 			
