@@ -1,4 +1,3 @@
-// based on code posted by james mccartney
 SynthDef(\babblingbrook_jmc, { |out=0, amp=0.1|
 	var son;
 
@@ -7,4 +6,9 @@ SynthDef(\babblingbrook_jmc, { |out=0, amp=0.1|
 		+ ({RHPF.ar(OnePole.ar(BrownNoise.ar, 0.99), LPF.ar(BrownNoise.ar, 20)
 		* 800 + 1000, 0.03, 0.005)}!2)  * 4;
 	Out.ar(out, son * (amp * 20))
-})
+},
+metadata: (
+	credit: "based on code posted to sc-users 2007-04-07 by james mccartney",
+	tags: [\babbling, \brook]
+	)
+)

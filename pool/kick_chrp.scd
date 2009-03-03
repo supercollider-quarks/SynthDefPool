@@ -9,4 +9,9 @@ pitchenv = EnvGen.ar(Env.perc(0, 0.1, curve: -20).exprange(0, 1000), doneAction:
 Out.ar(out, Pan2.ar(SinOsc.ar(pitchenv) * amp, pan))
 
 
-})
+},
+metadata: (
+	credit: "by dan stowell. public domain",
+	tags: [\kick, \drum, \percussion, \chirp]
+	)
+)

@@ -1,4 +1,3 @@
-// from 08091500Acid309 by_otophilia
 SynthDef("kick_oto309", {	
 	arg out=0, amp=0.1, pan=0;
 	var env0, env1, env1m, son;
@@ -16,4 +15,9 @@ SynthDef("kick_oto309", {
 	son = son.clip2(1);
 	
 	Out.ar(out, Pan2.ar(son * amp));
-})
+},
+metadata: (
+	credit: "from 08091500Acid309 by_otophilia",
+	tags: [\kick, \drum, \percussion]
+	)
+)

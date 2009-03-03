@@ -1,4 +1,3 @@
-// from 08091500Acid309 by_otophilia
 SynthDef("acid_oto309", {	
 	arg out=0, gate=1, freq=440, amp=0.1, pan=0;
 	var env1, env2, son, pitch;
@@ -12,4 +11,9 @@ SynthDef("acid_oto309", {
 	son = son * env1;
 	
 	Out.ar(out, Pan2.ar(son, pan));
-})
+},
+metadata: (
+	credit: "from 08091500Acid309 by_otophilia",
+	tags: [\pitched, \acid, \phat, \subtractive]
+	)
+)

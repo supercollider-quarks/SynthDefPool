@@ -23,4 +23,9 @@ SynthDef(\cymbalic_mcld, { |out=0, pan=0, amp=0.1|
 	res    = Ringz.ar(lodriver + hidriver + thwack, freqs).mean;
 	
 	Out.ar(out, Pan2.ar(((res * 1) + (lodriver * 2) + thwack) * amp, pan));
-})
+},
+metadata: (
+	credit: "Based on the example at http://www.mcld.co.uk/cymbalsynthesis/ published 2008 by Dan Stowell",
+	tags: [\percussion, \cymbal, \gong, \inharmonic, \additive, \subtractive]
+	)
+)

@@ -1,6 +1,3 @@
-/*
-published on the sc-users list 2009-01-08 by thor
-*/
 SynthDef(\oneclap_thor, {arg out=0, t_trig=1, amp=0.1, filterfreq=100, rq=0.1, pan=0;
 var env, signal, attack,Ê noise, hpf1, hpf2;
 	noise = WhiteNoise.ar(1)+SinOsc.ar([filterfreq/2,filterfreq/2+4 ], pi*0.5, XLine.kr(1,0.01,4));
@@ -15,4 +12,9 @@ var env, signal, attack,Ê noise, hpf1, hpf2;
 	signal = FreeVerb.ar(signal, 0.23, 0.15, 0.2);
 	Out.ar(out, Pan2.ar(signal * amp, pan));
 	DetectSilence.ar(signal, doneAction:2);
-})
+},
+metadata: (
+	credit: "published on the sc-users list 2009-01-08 by thor",
+	tags: [\clap, \handclap]
+	)
+)

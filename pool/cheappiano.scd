@@ -1,6 +1,3 @@
-/*
-based on something posted 2008-06-17 by jeff, based on an old example by james mcc
-*/
 SynthDef(\cheappiano, { arg out=0, freq=440, amp=0.1, dur=1, pan=0;Ê
 	var sig, in, n = 6, max = 0.04, min = 0.01, delay, pitch, detune, hammer;
 	freq = freq.cpsmidi;
@@ -13,4 +10,9 @@ SynthDef(\cheappiano, { arg out=0, freq=440, amp=0.1, dur=1, pan=0;Ê
 		
 	sig = HPF.ar(sig,50) * EnvGen.ar(Env.perc(0.0001,dur, amp * 4, -1), doneAction:2);		
 	Out.ar(out, Pan2.ar(sig, pan));
-})
+},
+metadata: (
+	credit: "based on something posted 2008-06-17 by jeff, based on an old example by james mcc",
+	tags: [\casio, \piano, \pitched]
+	)
+)

@@ -21,4 +21,9 @@ hum = SinOsc.ar([freq*1.01, freq*0.47], 0, EnvGen.ar(Env.new([0,0.05,0.05,0], [0
 Out.ar(out, Pan2.ar((son + strike + hum) * 4 * amp, pan));
 
 
-})
+},
+metadata: (
+	credit: "not sure if this is by me (dan) or someone else",
+	tags: [\bell, \percussion, \pitched, \additive]
+	)
+)

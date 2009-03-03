@@ -1,4 +1,3 @@
-// from 08091500Acid309 by_otophilia
 SynthDef("snare_oto309", {	
 	arg out=0, amp=0.1, pan=0;
 	var env0, env1, env2, env1m, oscs, noise, son;
@@ -21,4 +20,9 @@ SynthDef("snare_oto309", {
 	son = son.clip2(1) * amp;
 		
 	Out.ar(out, Pan2.ar(son, pan));
-})
+},
+metadata: (
+	credit: "from 08091500Acid309 by_otophilia",
+	tags: [\snare, \drum, \percussion]
+	)
+)

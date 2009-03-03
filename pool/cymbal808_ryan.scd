@@ -1,6 +1,3 @@
-/*
-Published on sc-users 2007-08-25 by Ryan Brown
-*/
 SynthDef(\cymbal808_ryan, {
 	arg out=0, baseFreq = 300, time = 250, amp=0.1;
 	//var freqs = [baseFreq, baseFreq*1.3420, baseFreq*1.2312, baseFreq*1.6532, baseFreq*1.9523, baseFreq*2.1523];
@@ -21,4 +18,9 @@ SynthDef(\cymbal808_ryan, {
 	signal = signal * EnvGen.ar(Env.new([0, 1, 0.4, 0, 0], [2, time, 50, 500], [0, -0.5, 0, -50]), timeScale:(1/1000), doneAction:2);
 	signal = [signal, DelayN.ar(signal, 0.005, 0.005)];
 	OffsetOut.ar(out, signal*4*amp);
-})
+},
+metadata: (
+	credit: "Published on sc-users 2007-08-25 by Ryan Brown",
+	tags: ['808', \hihat, \percussion, \cymbal]
+	)
+)

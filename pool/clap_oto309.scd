@@ -1,4 +1,3 @@
-// from 08091500Acid309 by_otophilia
 SynthDef("clap_oto309", {	
 	arg out=0, amp = 0.1, pan=0;
 	var env1, env2, son, noise1, noise2;
@@ -19,4 +18,9 @@ SynthDef("clap_oto309", {
 	son = son.softclip * amp;
 	
 	Out.ar(out, Pan2.ar(son, pan));
-})
+},
+metadata: (
+	credit: "from 08091500Acid309 by_otophilia",
+	tags: [\clap, \percussion]
+	)
+)

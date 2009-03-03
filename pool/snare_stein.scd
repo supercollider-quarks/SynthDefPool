@@ -1,4 +1,3 @@
-// Snare written by Esben Stein, I believe
 SynthDef(\snare_stein, { |out=0, amp=0.1, pan=0|
 var snare, filtWhite;
 
@@ -12,4 +11,9 @@ snare = ((SinOsc.ar(330,0,0.25) * EnvGen.ar(Env.perc(0.0005,0.055)))
 
 Out.ar(out, Pan2.ar(snare * amp * 10, pan));
 
-})
+},
+metadata: (
+	credit: "Snare written by Esben Stein, I believe",
+	tags: [\percussion, \drum, \snare]
+	)
+)
