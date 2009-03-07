@@ -23,7 +23,7 @@ Out.ar(out, Pan2.ar((son + strike + hum) * 4 * amp, pan));
 
 },
 metadata: (
-	credit: "not sure if this is by me (dan) or someone else",
+	credit: "by dan stowell. based on a sound-on-sound 'synth secrets' tutorial",
 	tags: [\bell, \percussion, \pitched, \additive]
 	)
 )

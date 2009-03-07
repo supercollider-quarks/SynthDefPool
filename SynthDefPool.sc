@@ -1,6 +1,7 @@
 /*
 SynthDefPool - a quark to facilitate sharing SynthDefs in a structured way
 Created by Dan Stowell 2009
+SynthDefPool.gui
 */
 SynthDefPool {
 
@@ -66,6 +67,12 @@ SynthDefPool {
 						if(aSynth.notNil){aSynth.free; aSynth=nil };
 					}{
 						aSynth = Synth(listview.item);
+						OSCresponderNode(Server.default.addr, '/n_end', { |time, resp, msg|
+							if(aSynth.notNil and: {msg[1]==aSynth.nodeID}){
+								// Synth has freed (itself?) so ensure button state is consistent
+								{startButton.value=0}.defer;
+							};
+						}).add.removeWhenDone;
 					}
 				};
 			cmdPeriodFunc = { startButton.value = 0; };
